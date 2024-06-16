@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+    <title>Painting Webapp</title>
+</head>
+<body>
+    <p> Paint by holding down the mouse and moving it.
+        <!-- how to download an image-->
+        <a href="" download="painting.png">Download my XML </a>
+        <a href="" class="fa fa-refresh refresh-btn" >Clear</a> 
+    </p>
+
+    <div id="pen-tools" class="pen-tools">
+        <div id="drawing-colors" class="drawing-colors">
+            <div class="color-circle active" data-color="hotpink" onclick="selectColor(this)"></div>
+            <div class="color-circle" data-color="orange" onclick="selectColor(this)"></div>
+            <div class="color-circle" data-color="red" onclick="selectColor(this)"></div>
+            <div class="color-circle" data-color="yellow" onclick="selectColor(this)"></div>
+            <div class="color-circle" data-color="black" onclick="selectColor(this)"></div>
+            <div class="color-circle" data-color="blue" onclick="selectColor(this)"></div>
+            <div class="color-circle" data-color="white" onclick="selectColor(this)"></div>
+            <div class="color-circle" data-color="green" onclick="selectColor(this)"></div>
+        </div>
+
+        <div id="favContainer">
+            <label for="favColor">select your favourite colour:</label>
+            <input type="color" name=favcolor id="favcolor" value="#ff0000" onchange="favColor(this)">
+        </div>
+
+        <div id="pen-size" class="pen-size">
+            <label for="pen-size"><i class="fa fa-pencil"></i>Pen Size</label>
+            <input type="range" name="pen-size" id="pen-size" value="10" step="5" max="40" onchange="penSizeChange(this.value)">
+        </div>
+    </div>
+
+    <div class="container-wrapper">
+        <input type='file' onchange="readURL(this);" />
+        <img class="image" id="blah" src="#" alt="your image" />
+        <canvas width="600" height="400"></canvas> 
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
